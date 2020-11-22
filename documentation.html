@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+ 	<title>Documentation</title>
+ 	<link rel= "stylesheet" type="text/css" href="stylesheet.css">
+    <link href='https://fonts.googleapis.com/css?family=Sawarabi+Gothic' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Sawarabi+Mincho' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+<header>
+	<h1>Documentation</h1>
+</header>
+
+<div id = document>
+  <h3>Process:</h3>
+  <p>I decided to tackle the anime API. My idea was to copy paste gif finder and build off that. Then I looked at the documentation for the anime API to realize it didn't need an API Key. I also looked at how to get information from that API. I had my prototype ready where it was taking in a genre and returning at least 10 anime from that genre. 
+<p>I improved upon the controls to take the score into account. I worked on adding a flexbox system to my drop downs. Then I updated the status symbol/text, took limit into account,and had the results display a score. Somewhere  along the line I started working on sorting the data by score instead of it's default: alphabetical. An hour or so later I realized that using the sort function wasn't going to work so I used a bubble sort to format my information. </p>
+<p>My final website design strayed far from my prototype as I really liked the idea of having the status image be an anime character instead of a circle. The pallete was more or less the same. I added a footer in for the documentation and kept everything center aligned.</p>
+  <h3>Sources:</h3>
+  <p>All the images were labeled for noncommercial reuse with modification. Except the anime character art which was supplied by an artist, Ezaki Bisuko, the character is called Menhera-chan. The other source is the Jikan Unofficial MyAnimeList API.</p>
+   <a href =" https://menhera-chan.tumblr.com/about" >Ezaki Bisuko</a>
+   <a href="https://jikan.moe/">Jikan Unoffical MyAnimeList API</a>
+  
+  <h3>Things to Notice:</h3>
+  <p>Something is wrong on the API end when it comes to getting the score. In the higher ranges, if you select 7 it will only give you scores below 8 which is correct, but if you select 3 it will give you all the score it has for that category starting from the lowest. I checked this on the MyAnimeList Website itself with the same results.</p>
+  <p>If you select a combination with no results it will show a special image. Try something that would have no results like Dementia, 9, and 5. I added some css responsiveness (flexbox and grid) to my results and made my link and button fancy. I added a favicon and implemented smooth scrolling.</p>
+  <h3>Grade:</h3>
+  <p>I made sure to review the rubric and checked it with the website. Based on the rubric I would give myself an A. I am overall very pleased and proud of the final result of this website. I'm not sure what I could have added to go above and beyond, but there's always room for improvement with anything.</p>
+</div>
+<hr>
+<footer>
+      <a id = "link" href="index.html">Back to Main Page</a>
+</footer>
+
+</body>
+</html>
