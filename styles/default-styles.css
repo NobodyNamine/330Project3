@@ -1,11 +1,6 @@
 *{
     font-family:verdana,tahoma,sans-serif;
 }
-
- header{
-     background: url(images/cats.jpg);
-     height:195px;
- }
  
  header h1{
      margin:0;
@@ -14,40 +9,6 @@
      font-size:100px;
      padding-top: 35px;
  }
- 
- #status{
-     font-style: italic;
-     height:32px;
- }
- 
- .result {
-    position: relative;
-    height: 175px;
-    width: 100px;
-    float:left;
-    border:1px solid gray;
-    padding:5px;
-    margin-left:10px;
-    margin-bottom:10px;
-}
-
-.result img {
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    display:block;
-    
-}
-
-.result span{
-    font-size:12px;
-    font-weight:bold;
-    display:block;
-}
-
-.result audio{
-    width: 130px;
-}
 
 button{
   display : inline-block;
