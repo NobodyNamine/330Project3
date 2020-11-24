@@ -38,7 +38,6 @@ function madLib(text) {
 function cleanInput(text) {
     text = text.replace(/\W/g," ");
 
-    console.log(text);
 	return text;
 }
 
