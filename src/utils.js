@@ -10,16 +10,20 @@ function compareRatings(first,second) {
 
 function madLib(text) {
     if (text.length == 0) return;
-    let cleanedText = cleanInput(text);
-	let rs = RiString(cleanedText);
+    // let cleanedText = cleanInput(text);
+	let rs = RiString(text);
 
 	let words = rs.words();
+
 	let s = "";
 
 	let posToReplace = ["nnp", "nn", "nns", "jj", "jjr", "jjs", "vb", "vbd", "vbg", "vbn", "vbp", "vbz"];
 
 	for(let i = 0; i < words.length; i++) {
 		let w = words[i];
+
+		if(RiTa.isPunctuation(w)) continue;
+		
 		if(posToReplace.includes(rs.posAt(i))) {
 			let similarWords = RiTa.similarBySound(w);
 
@@ -28,6 +32,7 @@ function madLib(text) {
 			}
 		}
 
+		if(RiTa.isPunctuation(words[i+1])) w += words[i+1];
 		s += w + " ";
     }
     

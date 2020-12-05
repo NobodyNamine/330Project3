@@ -63,7 +63,6 @@ function jsonLoaded(obj){
     else
     {
         document.querySelector("#statusImage").src = "images/ok.gif";
-        document.querySelector("#shows").innerHTML = "Check These Shows Out";
         document.querySelector("#statusText").textContent = "Results are below!";
         x = true;
     }
