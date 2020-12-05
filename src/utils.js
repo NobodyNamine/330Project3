@@ -15,14 +15,17 @@ function madLib(text) {
 
 	let words = rs.words();
 
+	// Split words with dashes (RiTa wouldn't recognize "golden-haired" as two words)
+	tokenizeHyphens(words);
+
+	console.log(words);
+
 	let s = "";
 
-	let posToReplace = ["nnp", "nn", "nns", "jj", "jjr", "jjs", "vb", "vbd", "vbg", "vbn", "vbp", "vbz"];
+	let posToReplace = ["nn", "nns", "jj", "jjr", "jjs", "vb", "vbd", "vbg", "vbn", "vbp", "vbz"];
 
 	for(let i = 0; i < words.length; i++) {
 		let w = words[i];
-
-		if(RiTa.isPunctuation(w)) continue;
 		
 		if(posToReplace.includes(rs.posAt(i))) {
 			let similarWords = RiTa.similarBySound(w);
@@ -32,18 +35,42 @@ function madLib(text) {
 			}
 		}
 
-		if(RiTa.isPunctuation(words[i+1])) w += words[i+1];
 		s += w + " ";
-    }
+	}
+	
+	s = cleanText(s);
     
     return s;
 }
 
-// Removes the non-letter characters from string and replaces them with a space
-function cleanInput(text) {
-    text = text.replace(/\W/g," ");
+function tokenizeHyphens(words) {
+	for (let i = 0; i < words.length; i++) {
+		if(words[i].includes("-")) {
+			let arr = words[i].split("-");
+			
+			words[i] = arr[1];
+			words.insert(i, "-");
+			words.insert(i, arr[0]);
 
-	return text;
+			i += 3;
+		}
+	}
+}
+
+// Cleans up unwanted spaces between punctuation
+function cleanText(text) {
+	let strA = text.replace(/ +(\W)/g, "$1");
+	let strB = strA.replace(/-+(\W)/g, "-");
+
+	return strB;
+}
+
+Array.prototype.insert = function ( index, item ) {
+    this.splice( index, 0, item );
+};
+
+Array.prototype.remove = function ( index ) {
+	this.splice( index, 1 );
 }
 
 export {compareRatings, madLib};
