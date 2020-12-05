@@ -1,4 +1,5 @@
 import * as utils from "./utils.js";
+import * as rita from "./rita.js";
 
 function jsonLoaded(obj){
     //if there are no results, print a message and return
@@ -32,7 +33,7 @@ function jsonLoaded(obj){
         let score = result.score;
         let title = result.title;
         let synopsis = result.synopsis;
-        let fakeSynopsis = utils.madLib(result.synopsis);
+        let fakeSynopsis = rita.madLib(result.synopsis);
         if(synopsis=="")
         {
             //TODO: If no synopsis exists, put a random synopsis
