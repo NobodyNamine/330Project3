@@ -25,7 +25,7 @@
                 <p id=statusText>Choose a genre</p>
             </div>
 
-            <div class="dropdown">
+            <div id="controls">
                 <div class="genres">
                     <label id = "genreLabel">Genre:</label>
                     <select id="genres">
@@ -67,22 +67,23 @@
                         <option value="41">Thriller</option>
                         <option value="32">Vampire</option>
                     </select>
-                    <button id="search" type="search">Search</button>
-                    <!--<button id = "clear" type="clear">Clear</button>-->
                 </div>
 
-                <div class="interactionType">
-                    <h2 id="interactionHeader">Interaction Type</h2>
+                <div id="interactionType">
+                    <h2 id="interactionHeader">Settings</h2>
                     <input type="radio" id="replace_words" name="interactiontype" value="replace_words">
                     <label for="replace_words">Replace Words Myself</label><br>
+                    <div id="customSettings">
+                        <h2 id="pos">Select Part of Speech: </h2>
+                        <input type="checkbox" id="nouns" name="nouns" value="nouns">
+                        <label for="nouns"> Nouns</label><br>
+                        <input type="checkbox" id="adjectives" name="adjectives" value="adjectives">
+                        <label for="adjectives"> I have a car</label><br>
+                        <input type="checkbox" id="verbs" name="verbs" value="verbs">
+                        <label for="verbs"> I have a boat</label><br><br>
+                    </div>
                     <input type="radio" id="randomly_generate" name="interactiontype" value="generate_words">
                     <label for="generate_words">Randomly Generate Words</label><br>
-                </div>
-
-                <div class="interactionType">
-                    <h2 id="pos">Part of Speech: </h2>
-                    <input type="textpos" id="pos" name="textpos">
-                    <button id="enter" type="enter">Enter</button>
                 </div>
 
                 <button id="generate" type="generate">Generate</button>

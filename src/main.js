@@ -13,7 +13,7 @@ function storedData(){
     const prefix = "nqs3694-";    
     const genreKey = prefix + "genre";
     
-    //getting the score, genre, and limit variable
+    //getting the genre
     const userGenre = document.querySelector("#genres");
     
 
@@ -41,23 +41,27 @@ function storedData(){
 
 function getData(){        
     
-    let userLimit = 50;
     // 1 myanimelist api url
     let url = "https://api.jikan.moe/v3/search/anime?q=";
+
+    // // 2 get userlimit first
+    // let userLimit = document.querySelector("#limit").value;
     
-    //add limit to the url
-   // url += "&limit=" + userLimit;
-    url += "&limit=" + 50;
+    // //add limit to the url
+    // url += "&limit=" + userLimit;
     
-    //getting the score and genre
+    // //getting the score and genre
+    // let userScore = document.querySelector("#score").value;
     let userGenre = document.querySelector("#genres").value;
                 
     //make the whole url search
     url+="&genre="+userGenre;
 
     //update status to loading
-    document.querySelector("#statusText").textContent = "Processing fake words...";
+    document.querySelector("#statusText").textContent = "Loading...";
     document.querySelector("#statusImage").src = "images/loading.gif";
+
+    console.log(url);
 
     // call the web service, and prepare to download the file / tried to do this with xhr but it didn't work
     $.ajax({

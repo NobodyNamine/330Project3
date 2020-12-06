@@ -8,12 +8,10 @@ function jsonLoaded(obj){
         document.querySelector("#content").innerHTML = `<p><i>Problem! <b>${msg}</b></i></p>`;
         return; // Bail out
     }
-    
-    //get an array like list of objects
-    let results = obj.results;
-    
-   
-    
+
+    // Get an array of objects -- filter results so they display only SFW results
+    let results = obj.results.filter(obj => obj.rated != "Rx");
+
     //If there are no results, show that
     if(!results){
         document.querySelector("#content").innerHTML = `<p><i>Problem! <b>No results for "${term}"</b></i></p>`;
@@ -26,40 +24,34 @@ function jsonLoaded(obj){
     //Showing the user the number of results
     let bigString = "";
 
-    // Sort by descending score
-    //results.sort(utils.compareRatings);
-    
-    //go through the list and print them all
-    /*for (let i=0;i<results.length;i++)
-    {*/
-        let result = results[0];
-        let url = result.url;
-        let title = result.title;
-        let synopsis = result.synopsis;
-        let fakeSynopsis = rita.madLib(result.synopsis);
-        if(synopsis=="")
-        {
-            //TODO: If no synopsis exists, put a random synopsis
-            synopsis = "This is a random synopsis."
-        }
-        //Add the image
-        //create the big string to display
-        let imageURL = result.image_url;
-        let line = ` <div id = left>
-                        <a target ='_blank' href=${url}><h2>${title}</h2></a>
-                        <p></p>
-                        <button id="picture" type="picture">Change Picture</button>
-                    `;
+    let result = results[randomResultNum];
+    let url = result.url;
+    let title = result.title;
+    let synopsis = result.synopsis;
+    let fakeSynopsis = rita.madLib(result.synopsis);
+    if(synopsis=="")
+    {
+        //TODO: If no synopsis exists, put a random synopsis
+        synopsis = "This is a random synopsis."
+    }
+    //Add the image
+    //create the big string to display
+    let imageURL = result.image_url;
+    let line = ` <div id = left>
+                    <a target ='_blank' href=${url}><h2>${title}</h2></a>
+                    <p></p>
+                    <button id="picture" type="picture">Change Picture</button>
+                `;
 
-        bigString+=line;
-        let image = `<img class = 'image' src ='${imageURL}' alt = '${title} image'></div>`;
-        bigString += image;
-        let line2 = `
-            <div id = right>
-                        <p class='synopsis'>Real synopsis: ${synopsis}</p>
-                        <p class='synopsis'>Fake synopsis: ${fakeSynopsis}</p>
-            </div>;`
-        bigString+= line2;
+    bigString+=line;
+    let image = `<img class = 'image' src ='${imageURL}' alt = '${title} image'></div>`;
+    bigString += image;
+    let line2 = `
+        <div id = right>
+                    <p class='synopsis'>Real synopsis: ${synopsis}</p>
+                    <p class='synopsis'>Fake synopsis: ${fakeSynopsis}</p>
+        </div>;`
+    bigString+= line2;
     
     
     
@@ -87,6 +79,10 @@ function jsonLoaded(obj){
                 top: 630,
                 behavior: 'smooth'});
     } 
+}
+
+function sfwFilter() {
+
 }
 
 export { jsonLoaded };
