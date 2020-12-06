@@ -42,11 +42,12 @@ main{
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: auto%;
+    height: auto;
     font-size: 20px;
-    margin:1vh;
+    margin: 1vh;
     margin-bottom: 0;
-    position: relative; top: -3vh;
+    position: relative; 
+    top: -3vh;
 }
 .interactionType
 {
@@ -100,8 +101,6 @@ main{
 #statusText{
     text-align: center;
     font-size: 19px;
-    background-color: 
-
 }
 #statusImage{
     display: block;
