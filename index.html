@@ -18,78 +18,76 @@
         <h1>Fake Anime Generator</h1>
     </header>
 
-    <div class="bgContainer">
-        <main>
-            <div class="imagecontainer">
-                <img id="statusImage" src="images/waiting.gif" alt="Anime girl waiting for your input">
-                <p id=statusText>Choose a genre</p>
+    <main>
+        <div class="imagecontainer">
+            <img id="statusImage" src="images/waiting.gif" alt="Anime girl waiting for your input">
+            <p id=statusText>Choose a genre</p>
+        </div>
+
+        <div id="controls">
+            <div class="genres">
+                <label id = "genreLabel">Genre:</label>
+                <select id="genres">
+                    <option value="1">Action</option>
+                    <option value="2">Adventure</option>
+                    <option value="3">Cars</option>
+                    <option value="4">Comedy</option>
+                    <option value="5">Dementia</option>
+                    <option value="6">Demons</option>
+                    <option value="8">Drama</option>
+                    <option value="10">Fantasy</option>
+                    <option value="11">Game</option>
+                    <option value="35">Harem</option>
+                    <option value="13">Historical</option>
+                    <option value="43">Josei</option>
+                    <option value="15">Kids</option>
+                    <option value="16">Magic</option>
+                    <option value="17">Martial Arts</option>
+                    <option value="18">Mecha</option>
+                    <option value="38">Military</option>
+                    <option value="19">Music</option>
+                    <option value="7">Mystery</option>
+                    <option value="39">Police</option>
+                    <option value="40">Psychological</option>
+                    <option value="22">Romance</option>
+                    <option value="21">Samurai</option>
+                    <option value="23">School</option>
+                    <option value="24">Sci-Fi</option>
+                    <option value="Seinen">Seinen</option>
+                    <option value="25">Shoujo</option>
+                    <option value="26">Shoujo Ai</option>
+                    <option value="27">Shounen</option>
+                    <option value="26">Shounen Ai</option>
+                    <option value="36">Slice of Life</option>
+                    <option value="29">Space</option>
+                    <option value="30">Sports</option>
+                    <option value="31">Super Power</option>
+                    <option value="37">Supernatural</option>
+                    <option value="41">Thriller</option>
+                    <option value="32">Vampire</option>
+                </select>
             </div>
 
-            <div id="controls">
-                <div class="genres">
-                    <label id = "genreLabel">Genre:</label>
-                    <select id="genres">
-                        <option value="1">Action</option>
-                        <option value="2">Adventure</option>
-                        <option value="3">Cars</option>
-                        <option value="4">Comedy</option>
-                        <option value="5">Dementia</option>
-                        <option value="6">Demons</option>
-                        <option value="8">Drama</option>
-                        <option value="10">Fantasy</option>
-                        <option value="11">Game</option>
-                        <option value="35">Harem</option>
-                        <option value="13">Historical</option>
-                        <option value="43">Josei</option>
-                        <option value="15">Kids</option>
-                        <option value="16">Magic</option>
-                        <option value="17">Martial Arts</option>
-                        <option value="18">Mecha</option>
-                        <option value="38">Military</option>
-                        <option value="19">Music</option>
-                        <option value="7">Mystery</option>
-                        <option value="39">Police</option>
-                        <option value="40">Psychological</option>
-                        <option value="22">Romance</option>
-                        <option value="21">Samurai</option>
-                        <option value="23">School</option>
-                        <option value="24">Sci-Fi</option>
-                        <option value="Seinen">Seinen</option>
-                        <option value="25">Shoujo</option>
-                        <option value="26">Shoujo Ai</option>
-                        <option value="27">Shounen</option>
-                        <option value="26">Shounen Ai</option>
-                        <option value="36">Slice of Life</option>
-                        <option value="29">Space</option>
-                        <option value="30">Sports</option>
-                        <option value="31">Super Power</option>
-                        <option value="37">Supernatural</option>
-                        <option value="41">Thriller</option>
-                        <option value="32">Vampire</option>
-                    </select>
+            <div id="interactionType">
+                <h2 id="interactionHeader">Settings</h2>
+                <input type="radio" id="replace_words" name="interactiontype" value="replace_words" checked="true">
+                <label for="replace_words">Custom Generation</label><br>
+                <div id="customSettings">
+                    <h2 id="pos">Select Part of Speech: </h2>
+                    <input type="checkbox" id="nouns" name="nouns" value="nouns">
+                    <label for="nouns"> Nouns</label><br>
+                    <input type="checkbox" id="adjectives" name="adjectives" value="adjectives">
+                    <label for="adjectives"> Adjectives</label><br>
+                    <input type="checkbox" id="verbs" name="verbs" value="verbs">
+                    <label for="verbs"> Verbs</label><br><br>
                 </div>
-
-                <div id="interactionType">
-                    <h2 id="interactionHeader">Settings</h2>
-                    <input type="radio" id="replace_words" name="interactiontype" value="replace_words">
-                    <label for="replace_words">Replace Words Myself</label><br>
-                    <div id="customSettings">
-                        <h2 id="pos">Select Part of Speech: </h2>
-                        <input type="checkbox" id="nouns" name="nouns" value="nouns">
-                        <label for="nouns"> Nouns</label><br>
-                        <input type="checkbox" id="adjectives" name="adjectives" value="adjectives">
-                        <label for="adjectives"> I have a car</label><br>
-                        <input type="checkbox" id="verbs" name="verbs" value="verbs">
-                        <label for="verbs"> I have a boat</label><br><br>
-                    </div>
-                    <input type="radio" id="randomly_generate" name="interactiontype" value="generate_words">
-                    <label for="generate_words">Randomly Generate Words</label><br>
-                </div>
-
-                <button id="generate" type="generate">Generate</button>
+                <input type="radio" id="randomly_generate" name="interactiontype" value="generate_words">
+                <label for="generate_words">Randomly Generate Words</label><br>
             </div>
-        </main>
-    </div>
+
+            <button id="generate" type="generate">Generate</button>
+        </div>
+    </main>
 
     <hr>
 

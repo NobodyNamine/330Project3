@@ -1,9 +1,45 @@
 import * as json from "./content.js";
+import * as utils from "./utils.js";
 
 //onload run this function
 function init(){
     storedData();//look at local storage
+
+    setupUI();
+    
     document.querySelector("#generate").onclick = getData;//run function when generate is clicked.
+}
+
+let checkedRB;
+const statusText = document.querySelector("#statusText");
+
+function setupUI() {
+    // Get radio buttons
+    let radioButtons = document.querySelectorAll("input[type=radio][name=interactiontype]");
+    // Get checkboxes
+    let checkBoxes = document.querySelectorAll("input[type=checkbox]");
+
+    checkedRB = radioButtons[0];
+    const customSettings = document.querySelector("#customSettings");
+
+    for(let i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].onchange = () => {
+            if(radioButtons[i].checked) {
+                checkedRB = radioButtons[i];
+
+                if(checkedRB.value == "replace_words") {
+                    // Show additional settings
+                    statusText.innerHTML = "Select which parts of speech you'd like to randomize."
+                    customSettings.style.visibility = "visible";
+                }
+                else if(checkedRB.value == "generate_words") {
+                    statusText.innerHTML = "Ready to generate!"
+                    customSettings.style.visibility = "hidden";
+                    utils.uncheckAll(checkBoxes);
+                }
+            }
+        }
+    }
 }
 
 //function for setting and accessing local storage
@@ -15,8 +51,6 @@ function storedData(){
     
     //getting the genre
     const userGenre = document.querySelector("#genres");
-    
-
 
     //putting them into a stored value
     const storedGenre = localStorage.getItem(genreKey);
@@ -72,5 +106,5 @@ function getData(){
     });
 }
 
-export { init };
+export { init, checkedRB };
     

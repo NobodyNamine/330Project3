@@ -1,6 +1,5 @@
 function madLib(text) {
     if (text.length == 0) return;
-    // let cleanedText = cleanInput(text);
 	let rs = RiString(text);
 
 	let words = rs.words();

@@ -10,8 +10,14 @@
 
 export {compareRatings};*/
 function getRandom(min, max) {
-        min = Math.ceil(min);
+    min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-export{getRandom};
+
+function uncheckAll(checkboxes) {
+    for(let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = false;
+    }
+}
+export{getRandom, uncheckAll};

@@ -21,6 +21,7 @@ function jsonLoaded(obj){
     //gets one randomresult
     let randomResultNum = utils.getRandom(0,results.length);
     console.log(utils.getRandom(0,results.length));
+
     //Showing the user the number of results
     let bigString = "";
 
@@ -52,8 +53,6 @@ function jsonLoaded(obj){
                     <p class='synopsis'>Fake synopsis: ${fakeSynopsis}</p>
         </div>;`
     bigString+= line2;
-    
-    
     
     let x = false;
     //if there is or isn't a result update status image

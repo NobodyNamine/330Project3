@@ -20,21 +20,15 @@ h1{
     margin-bottom: 0;
 }
 main{
-    height: auto;
-    margin: 2rem;
+    padding: 2rem; 
     color: #95F9E3;
+    height: 70vh;
+    background-image: url(../images/bg.jpg);
+    background-repeat:round;
 }
 #controls{
     width: 50%;
     font-size: 20px;
-}
-.bgContainer{
-    width: 100%;
-    height: 70vh;
-    background-image: url(../images/bg.jpg);
-    padding-top: 1rem;
-    padding-bottom:1rem;
-    background-repeat:round;
 }
 #interactionType,.genres,.partsofSpeech{
     margin-bottom: 30px;
@@ -51,7 +45,7 @@ main{
     min-height: 250px;
 }
 #customSettings{
-    display: none;
+    visibility: visible;
     padding: 1em;
     margin-left: 4em;
 }
