@@ -34,7 +34,6 @@ function jsonLoaded(obj){
     {*/
         let result = results[0];
         let url = result.url;
-        let score = result.score;
         let title = result.title;
         let synopsis = result.synopsis;
         let fakeSynopsis = rita.madLib(result.synopsis);

@@ -190,14 +190,10 @@ a:visited{
     color: #3A506B;
 }
 #document{
-    text-align: left;
     margin-left: 1rem;
 }
 h3{
     color: #95F9E3;
-}
-#document p{
-    text-align: left;
 }
 #content{
     display: grid;
@@ -215,6 +211,9 @@ h3{
 }
 #right{
     grid-column: 2;
+}
+.synopsis{
+    text-align: left;
 }
 
 
