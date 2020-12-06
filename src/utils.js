@@ -1,4 +1,4 @@
-function compareRatings(first,second) {
+/*function compareRatings(first,second) {
     if (first.score == second.score) {
         return 0;
     }
@@ -8,4 +8,10 @@ function compareRatings(first,second) {
     return -1;
 }
 
-export {compareRatings};
+export {compareRatings};*/
+function getRandom(min, max) {
+        min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+export{getRandom};
