@@ -20,7 +20,6 @@ function jsonLoaded(obj){
     
     //gets one randomresult
     let randomResultNum = utils.getRandom(0,results.length);
-    console.log(utils.getRandom(0,results.length));
 
     //Showing the user the number of results
     let bigString = "";

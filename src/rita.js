@@ -19,11 +19,10 @@ function madLib(text) {
 	// Split words with dashes (RiTa wouldn't recognize "golden-haired" as two words)
 	tokenizeHyphens(words);
 
-	console.log(words);
-
 	let s = "";
 	let posToReplace = [];
 
+	// Randomize words
 	if(checkedRB.value == "generate_words") {
 		posToReplace = ["nn", "nns", "jj", "jjr", "jjs", "vb", "vbd", "vbg", "vbn", "vbp", "vbz"];
 	}
