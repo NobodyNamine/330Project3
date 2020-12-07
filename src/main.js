@@ -12,6 +12,15 @@ function init(){
     setupUI();
     
     generateBtn.onclick = getData;//run function when generate is clicked.
+
+    // Clear results
+    document.querySelector("#clear").onclick = () => {
+        let root = document.querySelector("#content");
+        while(root.firstChild) {
+            console.log("hello");
+            root.removeChild(root.firstChild);
+        }
+    }
 }
 
 function setupUI() {
