@@ -13,13 +13,14 @@ function init(){
     
     generateBtn.onclick = getData;//run function when generate is clicked.
 
-    // Clear results
+    // Clear results and local storage;
     document.querySelector("#clear").onclick = () => {
         let root = document.querySelector("#content");
         while(root.firstChild) {
-            console.log("hello");
             root.removeChild(root.firstChild);
         }
+
+        localStorage.clear();
     }
 }
 
