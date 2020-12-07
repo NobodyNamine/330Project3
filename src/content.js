@@ -28,12 +28,12 @@ function jsonLoaded(obj){
     let url = result.url;
     let title = result.title;
     let synopsis = result.synopsis;
-    let fakeSynopsis = rita.madLib(result.synopsis);
     if(synopsis=="")
     {
         //TODO: If no synopsis exists, put a random synopsis
         synopsis = "This is a random synopsis."
     }
+    let fakeSynopsis = rita.madLib(synopsis);
     //Add the image
     //create the big string to display
     let imageURL = result.image_url;
