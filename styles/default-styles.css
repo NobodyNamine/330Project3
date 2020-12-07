@@ -66,10 +66,8 @@ main{
 .radio{
     margin-left: 3vw;
     margin-top:7px;
-    align-self: left;
     width: 20px;
     height: 20px;
-   
 }
 .partsofSpeech{
     border-style: double;    
