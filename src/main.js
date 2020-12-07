@@ -67,7 +67,7 @@ function storedData(){
     userGenre.onchange = function(e){
         localStorage.setItem(genreKey,e.target.value);
         document.querySelector("#statusImage").src = "images/waiting.gif";
-        document.querySelector("#statusText").textContent = "Choose a genre"; 
+        document.querySelector("#statusText").textContent = "Next, choose a randomization setting."; 
     }
         
     

@@ -40,8 +40,6 @@ function jsonLoaded(obj){
     let imageURL = result.image_url;
     let line = ` <div id = left>
                     <a target ='_blank' href=${url}><h2>${title}</h2></a>
-                    <p></p>
-                    <button id="picture" type="picture">Change Picture</button>
                 `;
 
     bigString+=line;
