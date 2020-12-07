@@ -64,7 +64,7 @@ function jsonLoaded(obj){
     {
         document.querySelector("#shows").textContent = "Fake Anime Below!";
         document.querySelector("#statusImage").src = "images/ok.gif";
-        document.querySelector("#statusText").textContent = "Now Select your interaction!";
+        document.querySelector("#statusText").textContent = "How about another one?";
         x = true;
     }
     
@@ -76,10 +76,6 @@ function jsonLoaded(obj){
                 top: 630,
                 behavior: 'smooth'});
     } 
-}
-
-function sfwFilter() {
-
 }
 
 export { jsonLoaded };

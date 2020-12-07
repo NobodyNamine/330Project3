@@ -1,4 +1,16 @@
 function madLib(text) {
+	// Get settings
+	const checkBoxes = document.querySelectorAll("input[type=checkbox]");
+	const radioButtons = document.querySelectorAll("input[type=radio][name=interactiontype]");
+
+	// Get the checked radio button
+	let checkedRB;
+	for(let i = 0; i < radioButtons.length; i++) {
+		if(radioButtons[i].checked) {
+			checkedRB = radioButtons[i];
+		}
+	}
+	
     if (text.length == 0) return;
 	let rs = RiString(text);
 
@@ -10,18 +22,39 @@ function madLib(text) {
 	console.log(words);
 
 	let s = "";
+	let posToReplace = [];
 
-	let posToReplace = ["nn", "nns", "jj", "jjr", "jjs", "vb", "vbd", "vbg", "vbn", "vbp", "vbz"];
+	if(checkedRB.value == "generate_words") {
+		posToReplace = ["nn", "nns", "jj", "jjr", "jjs", "vb", "vbd", "vbg", "vbn", "vbp", "vbz"];
+	}
+	else if(checkedRB.value == "replace_words") {
+		for(let i = 0; i < checkBoxes.length; i++){
+			if(checkBoxes[i].checked) {
+				posToReplace.push(checkBoxes[i].value);
+			}
+		}
+
+		if (posToReplace.includes("nn")) {
+			posToReplace.push("nns");
+		}
+		if(posToReplace.includes("jj")) {
+			posToReplace.push("jjr");
+			posToReplace.push("jjs");
+		}
+		if(posToReplace.includes("vb")) {
+			posToReplace.push("vbd");
+			posToReplace.push("vbg");
+			posToReplace.push("vbn");
+			posToReplace.push("vbp");
+			posToReplace.push("vbz");
+		}
+	}
 
 	for(let i = 0; i < words.length; i++) {
 		let w = words[i];
-		
-		if(posToReplace.includes(rs.posAt(i))) {
-			let similarWords = RiTa.similarBySound(w);
-
-			if(similarWords.length > 0) {
-				w = similarWords[Math.floor(Math.random() * similarWords.length)];
-			}
+		let pos = rs.posAt(i);
+		if(posToReplace.includes(pos)) {
+			w = RiTa.randomWord(pos);
 		}
 
 		s += w + " ";

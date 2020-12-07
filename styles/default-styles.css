@@ -6,7 +6,7 @@ body{
 }
 header{
     background-color: #0B132B;
-    height: 20vh;
+    height: 125px;
     font-family: 'Sawarabi Gothic';
     background-image: url(../images/header.jpg);
     background-blend-mode: overlay;
@@ -45,7 +45,6 @@ main{
     min-height: 250px;
 }
 #customSettings{
-    visibility: visible;
     padding: 1em;
     margin-left: 4em;
 }
@@ -130,6 +129,10 @@ main{
 #search:active,#generate:active,#enter:active,#synBtn:active, #picture:active{
     background-color:#1C2541;
     opacity: 80%;
+}
+#generate:disabled{
+    background-color: #0B132B;
+    opacity: 30%;
 }
 #picture{
     margin-bottom: 1vh;

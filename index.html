@@ -28,6 +28,7 @@
             <div class="genres">
                 <label id = "genreLabel">Genre:</label>
                 <select id="genres">
+                    <option value="0">--</option>
                     <option value="1">Action</option>
                     <option value="2">Adventure</option>
                     <option value="3">Cars</option>
@@ -70,15 +71,15 @@
 
             <div id="interactionType">
                 <h2 id="interactionHeader">Settings</h2>
-                <input type="radio" id="replace_words" name="interactiontype" value="replace_words" checked="true">
+                <input type="radio" id="replace_words" name="interactiontype" value="replace_words">
                 <label for="replace_words">Custom Generation</label><br>
                 <div id="customSettings">
                     <h2 id="pos">Select Part of Speech: </h2>
-                    <input type="checkbox" id="nouns" name="nouns" value="nouns">
+                    <input type="checkbox" id="nouns" name="nouns" value="nn">
                     <label for="nouns"> Nouns</label><br>
-                    <input type="checkbox" id="adjectives" name="adjectives" value="adjectives">
+                    <input type="checkbox" id="adjectives" name="adjectives" value="jj">
                     <label for="adjectives"> Adjectives</label><br>
-                    <input type="checkbox" id="verbs" name="verbs" value="verbs">
+                    <input type="checkbox" id="verbs" name="verbs" value="vb">
                     <label for="verbs"> Verbs</label><br><br>
                 </div>
                 <input type="radio" id="randomly_generate" name="interactiontype" value="generate_words">
